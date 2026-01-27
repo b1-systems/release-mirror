@@ -1,0 +1,18 @@
+# github release mirror configuration
+
+base_dir = "/var/lib/github-mirror"
+
+# proxy server (optional)
+# proxy = "proxy.example.com:8080"
+
+# github token for higher rate limits (optional)
+# without token: 60 requests/hour
+# with token: 5000 requests/hour
+# github_token = "ghp_xxxxxxxxxxxx"
+
+# repositories to mirror
+urls = [
+    "https://github.com/trufflesecurity/trufflehog",
+    "https://github.com/VSCodium/vscodium",
+    "https://github.com/PowerShell/PowerShell",
+]
