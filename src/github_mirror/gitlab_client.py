@@ -1,5 +1,6 @@
 import requests
 
+from . import __version__
 from .base_client import BaseClient, RateLimitError, RateLimitInfo
 from .models import Release, Repository
 
@@ -15,7 +16,7 @@ class GitLabClient(BaseClient):
         super().__init__(proxy)
         self.base_url = base_url
 
-        self.session.headers["User-Agent"] = "release-mirror/0.8.0"
+        self.session.headers["User-Agent"] = f"release-mirror/{__version__}"
 
         if token:
             self.session.headers["PRIVATE-TOKEN"] = token

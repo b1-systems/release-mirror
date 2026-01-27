@@ -40,6 +40,8 @@ toml:
 ```toml
 base_dir = "/var/lib/release-mirror"
 proxy = "proxy.example.com:8080"
+
+# both optional
 github_token = "ghp_xxx"
 gitlab_token = "glpat_xxx"
 
@@ -96,7 +98,7 @@ base_dir/
 - rate limit handling (waits when < 10 remaining)
 - retry logic (max 3 attempts on 5xx/network errors)
 - file timestamps set to github/gitlab `updated_at`
-- atomic symlink updates (no race condition)
+- atomic symlink updates
 - dry-run mode
 - toml and yaml config
 
@@ -122,6 +124,7 @@ checksum files are downloaded first, parsed, and hashes are used to verify other
 --proxy             override proxy
 --token             github token
 --gitlab-token      gitlab private token
+--estimate          estimate api requests needed
 ```
 
 ## proxy
@@ -176,3 +179,11 @@ ruff handles linting (pycodestyle, pyflakes, isort, bugbear, etc). black for for
 ### tests
 
 still need to be written, will be in pytest
+
+## roadmap
+
+potential future features
+
+- [ ] tests
+- [ ] parallel downloads, structure is ready, would use `ThreadPoolExecutor`, checksum files first then assets in parallel, rate limit locking?
+- [ ] asset filtering

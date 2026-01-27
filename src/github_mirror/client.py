@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from . import __version__
 from .base_client import BaseClient, RateLimitError, RateLimitInfo
 from .models import Release, Repository
 
@@ -14,7 +15,7 @@ class GitHubClient(BaseClient):
         super().__init__(proxy)
 
         self.session.headers["Accept"] = "application/vnd.github+json"
-        self.session.headers["User-Agent"] = "release-mirror/0.8.0"
+        self.session.headers["User-Agent"] = f"release-mirror/{__version__}"
 
         if token:
             self.session.headers["Authorization"] = f"Bearer {token}"
