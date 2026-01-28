@@ -14,3 +14,11 @@ mypy:
   script:
     - pip install mypy types-requests types-PyYAML
     - mypy src
+
+pytest:
+  stage: lint
+  image: python:3.12-slim
+  script:
+    - pip install pytest
+    - pip install -e .
+    - pytest tests/

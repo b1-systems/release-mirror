@@ -1,12 +1,13 @@
 # release-mirror
 
+mirror github/gitlab releases locally. downloads all release assets and keeps them in a structured directory.
+
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 ![python](https://img.shields.io/badge/python-3.12+-blue?logo=python&logoColor=white)
 ![GPLv3](https://img.shields.io/badge/GPLv3-blue)
+![pytest](https://img.shields.io/github/actions/workflow/status/b1-systems/release-mirror/pytest.yml?label=pytest&logo=pytest)
 ![ruff](https://img.shields.io/github/actions/workflow/status/b1-systems/release-mirror/ruff.yml?label=ruff)
 ![mypy](https://img.shields.io/github/actions/workflow/status/b1-systems/release-mirror/mypy.yml?label=mypy)
-
-mirror github/gitlab releases locally. downloads all release assets and keeps them in a structured directory.
 
 <img src="terminal_screenshot.png" width="550">
 
