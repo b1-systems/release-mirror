@@ -1,0 +1,16 @@
+stages:
+  - lint
+
+ruff:
+  stage: lint
+  image: python:3.12-slim
+  script:
+    - pip install ruff
+    - ruff check src
+
+mypy:
+  stage: lint
+  image: python:3.12-slim
+  script:
+    - pip install mypy
+    - mypy src
