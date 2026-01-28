@@ -2,6 +2,8 @@
 
 mirror github/gitlab releases locally. downloads all release assets and keeps them in a structured directory.
 
+<img src="terminal_screenshot.png" width="550">
+
 ## installation
 
 ```bash
@@ -104,14 +106,14 @@ base_dir/
 
 ## hash verification
 
-the github/gitlab apis do not provide sha256 hashes for release binaries.
+github provides sha256 digests via api (since june 2025). gitlab does not.
 
-many projects publish checksum sidecar files instead. these are automatically detected and parsed:
+for older github releases and gitlab, sidecar checksum files are parsed as fallback:
 - `checksums.txt`, `*_checksums.txt`
 - `SHA256SUMS`, `sha256sums.txt`
 - per-file `*.sha256`, `*.sha256sum`
 
-checksum files are downloaded first, parsed, and hashes are used to verify other assets. works with trufflehog, vscodium, gitlab-runner, and similar projects that publish checksums.
+checksum files are downloaded first, parsed, and hashes verify other assets. existing files are checked against expected hash, mismatches result in error and exit code 1.
 
 ## options
 
