@@ -12,5 +12,5 @@ mypy:
   stage: lint
   image: python:3.12-slim
   script:
-    - pip install mypy
+    - pip install mypy types-requests types-PyYAML
     - mypy src
